@@ -3,7 +3,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
-
+  
 export default function Dashboard() {
   const router = useRouter();
 
