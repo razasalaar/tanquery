@@ -29,8 +29,7 @@ export default function LoginForm() {
   });
 
   const handleLogin = (e) => {
-    alert("Login button clicked");
-    // e.preventDefault();
+    e.preventDefault();
 
     const username = e.target.username.value;
     const password = e.target.password.value;
@@ -92,17 +91,15 @@ export default function LoginForm() {
               </div>
             </div>
 
-            <TERipple rippleColor="light">
-              <button
-                type="submit"
-                className="w-full cursor-pointer rounded bg-blue-600 px-7 py-3 text-sm font-medium uppercase text-white shadow hover:bg-blue-700"
-              >
-                {isLoading ? "Logging in..." : "Login"}
-              </button>
-              {loginError && (
-                <p className="text-red-500 mt-2 text-center">{loginError}</p>
-              )}
-            </TERipple>
+            <button
+              type="submit"
+              className="w-full cursor-pointer rounded bg-blue-600 px-7 py-3 text-sm font-medium uppercase text-white shadow hover:bg-blue-700"
+            >
+              {isLoading ? "Logging in..." : "Login"}
+            </button>
+            {loginError && (
+              <p className="text-red-500 mt-2 text-center">{loginError}</p>
+            )}
 
             <div className="mt-6 text-center text-sm text-gray-600">
               Don't have an account?{" "}

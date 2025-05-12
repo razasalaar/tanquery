@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SignupForm from "./register/page";
 
 export default function Home() {
@@ -6,5 +5,5 @@ export default function Home() {
     <div>
       <SignupForm />
     </div>
-  );npm
+  );
 }

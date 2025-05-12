@@ -3,7 +3,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
-import Image from "next/image";
+
 export default function Dashboard() {
   const router = useRouter();
 
@@ -25,7 +25,7 @@ export default function Dashboard() {
               <span className="uppercase text-white text-sm font-bold mb-4 block tracking-widest">
                 PREMIUM FASHION
               </span>
-              <h1 className="text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+              <h1 className="text-white font-extrabold text-3xl sm:text-5xl lg:text-5xl mb-6 leading-tight">
                 Welcome to <span className="text-red-700">ONE</span> – Your
                 Trendy Clothing Store
               </h1>
