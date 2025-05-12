@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { logoutUser } from "@/lib/api";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
-
+  const pathname = usePathname();
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
     setIsLoggedIn(!!token);
@@ -74,7 +75,7 @@ export default function Navbar() {
 
         {/* Hamburger Button */}
         <button
-          className="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none"
+          className="md:hidden  text-gray-500  w-10 h-10 relative focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="sr-only">Open main menu</span>
@@ -100,16 +101,56 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col items-center gap-4 py-4 font-semibold">
-          <Link href="/">Home</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/contact">Contact</Link>
+        <div className="flex flex-col space-y-6 px-6 py-4 flex-grow">
+          {/* Menu Items */}
+          <Link
+            href="/dashboard"
+            className={`px-4 py-3 rounded-lg transition-colors text-gray-800 font-medium ${
+              pathname === "/dashboard" ? "bg-gray-100" : "hover:bg-gray-100"
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </Link>
 
+          <Link
+            href="/about"
+            className={`px-4 py-3 rounded-lg transition-colors text-gray-800 font-medium ${
+              pathname === "/about" ? "bg-gray-100" : "hover:bg-gray-100"
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            About Us
+          </Link>
+
+          {/* Products */}
+          <Link
+            href="/products"
+            className={`px-4 py-3 rounded-lg transition-colors text-gray-800 font-medium ${
+              pathname === "/products" ? "bg-gray-100" : "hover:bg-gray-100"
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Products
+          </Link>
+
+          {/* Contact */}
+          <Link
+            href="/contact"
+            className={`px-4 py-3 rounded-lg transition-colors text-gray-800 font-medium ${
+              pathname === "/contact" ? "bg-gray-100" : "hover:bg-gray-100"
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </Link>
           {isLoggedIn ? (
             <button
-              onClick={handleLogout}
-              className="text-red-600 hover:underline"
+              onClick={() => {
+                handleLogout();
+                setMenuOpen(false);
+              }}
+              className="w-full px-4 py-3 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors font-medium"
             >
               Logout
             </button>
