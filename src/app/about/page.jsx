@@ -180,8 +180,8 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="lg:w-1/2">
-              <div className="relative w-full h-96 overflow-hidden rounded-xl shadow-xl">
+            <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
+              <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-xl shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
                   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
@@ -191,7 +191,7 @@ export default function About() {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <span className="text-[#f7d0b6] font-bold uppercase tracking-widest text-sm mb-4 block">
+              <span className="text-pink-300 font-bold uppercase tracking-widest text-sm mb-4 block">
                 Our Mission
               </span>
               <h2 className="text-sky-950 font-black text-3xl md:text-4xl leading-tight mb-6">
@@ -310,7 +310,7 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[#f7d0b6] font-bold uppercase tracking-widest text-sm mb-4 block">
+            <span className="text-pink-300 font-bold uppercase tracking-widest text-sm mb-4 block">
               Meet The Team
             </span>
             <h2 className="text-sky-950 font-black text-3xl md:text-4xl mb-6">
